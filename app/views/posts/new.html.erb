@@ -1,12 +1,16 @@
-<h1>投稿フォーム</h1>
+<h1>新規投稿</h1>
 <%= form_with model: @post do |f| %>
-  <h4>タイトル</h4>
+  <h4>投稿タイトル</h4>
   <%= f.text_field :title %>
-  <h4>ショップ名</h4>
+  <h4>施設名</h4>
   <%= f.text_field :shop_name %>
-  <h4>説明</h4>
-  <%= f.text_area :body %>
-  <h4>場所</h4>
-  <%= f.text_field :place %>
+  <h4>都道府県</h4>
+  <%= f.text_field :prefecture %>
+  <h4>市区町村</h4>
+  <%= f.text_field :address %>
+  <h4>おすすめポイント</h4>
+  <%= f.text_area :recommend_point %>
+  <h4>行く方へのアドバイス</h4>
+  <%= f.text_area :advice %>
   <%= f.submit '投稿' %>
 <% end %>

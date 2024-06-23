@@ -4,8 +4,10 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.string :title
       t.string :shop_name
-      t.text :body
-      t.string :place
+      t.text :recommend_point
+      t.text :advice
+      t.string :prefecture
+      t.string :address
       t.timestamps
     end
   end

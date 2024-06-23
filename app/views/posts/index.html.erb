@@ -1,15 +1,16 @@
-<h1>投稿一覧</h1>
+<h1>みんなの投稿</h1></h1>
+
+<p>フリーワードで探す</p>
+<p>施設から探す</p>
+<p>都道府県から探す（複数選択可）</p>
+<p>こだわり検索</p>
 
 <% @posts.each do |post| %>
   <div>
     <%= link_to post_path(post.id) do %>
       <%= image_tag post.get_image %>
     <% end %>
-    <p>投稿ユーザー画像：<%= image_tag post.user.get_profile_image %></p>
-    <p>タイトル：<%= post.title %></p>
-    <p>ショップ名：<%= post.shop_name %></p>
-    <p>説明：<%= post.body %></p>
-    <p>場所：<%= post.place %></p>
-    <p>ユーザーネーム：<%= post.user.name %></p>
+    <p>施設名：<%= post.shop_name %></p>
+    <p>都道府県：<%= post.prefecture %></p>
   </div>
 <% end %>

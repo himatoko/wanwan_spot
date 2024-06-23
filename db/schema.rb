@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 2024_06_13_061329) do
     t.integer "user_id"
     t.string "title"
     t.string "shop_name"
-    t.text "body"
-    t.string "place"
+    t.text "recommend_point"
+    t.text "advice"
+    t.string "prefecture"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
