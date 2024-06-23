@@ -17,5 +17,6 @@
     <% end %>
     <p>施設名：<%= post.shop_name %></p>
     <p>都道府県：<%= post.prefecture %></p>
+    <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>    
   </div>
 <% end %>
