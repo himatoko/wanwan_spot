@@ -3,6 +3,13 @@ class Post < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   has_many :comments, dependent: :destroy
+  
+  validates :title, presence: true
+  validates :shop_name, presence: true
+  validates :prefecture, presence: true
+  validates :address, presence: true
+  validates :recommend_point, presence: true
+  validates :advice, presence: true
 
   def get_image
     unless image.attached?
