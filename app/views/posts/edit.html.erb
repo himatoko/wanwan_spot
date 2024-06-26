@@ -1,0 +1,16 @@
+<h2>投稿内容編集</h2>
+<%= form_with model: @post do |f| %>
+  <label for="inputTitle">投稿タイトル</label>
+  <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"名前"%>
+  <label for="inputshopname">施設名</label>
+  <%= f.text_field :shop_name, autofocus: true, id:"inputshopname",placeholder: "施設名" %>
+  <label for="inputPrefecture">都道府県</label>
+  <%= f.text_field :prefecture, autofocus: true, id:"inputPrefecture", placeholder:"都道府県"%>
+  <label for="inputAddress">市区町村</label>
+  <%= f.text_field :address, autofocus: true, id:"inputAddress",placeholder: "市区町村" %>
+  <label for="inputRecommendpoint">おすすめポイント</label>
+  <%= f.text_area :recommend_point, autofocus: true, id:"inputRecommendpoint", placeholder:"おすすめポイント"%>
+  <label for="inputAdvice">行く方へのアドバイス</label>
+  <%= f.text_area :advice, autofocus: true, id:"inputAdvice",placeholder: "行く方へのアドバイス" %>
+  <%= f.submit "編集内容を保存" %>
+<% end %>
