@@ -1,7 +1,9 @@
 <h1>投稿詳細</h1>
 <div>
-  <p>投稿ユーザー画像：<%= image_tag @post.user.get_profile_image %></p>
-  <p>ユーザーネーム：<%= @post.user.name %></p>
+  <%= link_to user_path(@post.user.id) do %>
+    <p>投稿ユーザー画像：<%= image_tag @post.user.get_profile_image %></p>
+    <p>ユーザーネーム：<%= @post.user.name %></p>
+  <% end %>
 </div>
   
 <div>

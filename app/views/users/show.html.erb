@@ -1,4 +1,6 @@
-<h1>マイページ</h1>
+<% if @user == current_user %>
+  <h1>マイページ</h1>
+<% end %>
 
 <div>
   <h3><%= @user.name %></h3>
