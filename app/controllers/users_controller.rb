@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :is_matching_login_user, only: [:edit, :update]
+  
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
@@ -24,10 +27,18 @@ class UsersController < ApplicationController
     redirect_to new_user_registration_path
   end
   
-  private
+private
 
   def user_params
     params.require(:user).permit(:name, :email, :profile_image)
   end
   
+  def is_matching_login_user
+    user = User.find_by(id: params[:id])
+    if user.nil?
+      redirect_to user_path(user.id)
+    elsif user.id != current_user.id
+      redirect_to user_path(user.id)
+    end
+  end
 end

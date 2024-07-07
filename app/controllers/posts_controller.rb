@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+before_action :authenticate_user!, except: [:show, :index]
+before_action :is_matching_login_user, only: [:edit, :update, :destroy]
+  
   def new
     @post = Post.new
   end
@@ -43,10 +46,18 @@ class PostsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
   
-  private
+private
   
   def post_params
     params.require(:post).permit(:title, :shop_name, :recommend_point, :advice, :prefecture, :address)
   end
   
+  def is_matching_login_user
+    post = Post.find_by(id: params[:id])
+    if post.nil?
+      redirect_to posts_path
+    elsif current_user && post.user_id != current_user.id
+      redirect_to posts_path
+    end
+  end
 end
