@@ -25,6 +25,7 @@ lucas = User.find_or_create_by!(email: "lucas@example.com") do |user|
 end
 
 Post.find_or_create_by!(title: "大人気のカフェです。") do |post|
+  post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg")
   post.shop_name = "Cavello"
   post.recommend_point = "インスタ映えする飲み物とスイーツが楽しめます。犬向けのご飯もあります。"
   post.advice = "行列ができるので朝一に行くのがおすすめです。"
@@ -34,6 +35,7 @@ Post.find_or_create_by!(title: "大人気のカフェです。") do |post|
 end
 
 Post.find_or_create_by!(title: "素敵すぎるホテル。。！") do |post|
+  post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg")
   post.shop_name = "ホテルペット"
   post.recommend_point = "犬と一緒に泊まれるホテルです。犬用のアメニティーも充実してます！"
   post.advice = "予約が埋まりやすいので早めに予約するのがおすすめです。"
@@ -43,6 +45,7 @@ Post.find_or_create_by!(title: "素敵すぎるホテル。。！") do |post|
  end
 
 Post.find_or_create_by!(title: "一日遊べるドッグラン！！") do |post|
+  post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg")
   post.shop_name = "dogrunrun"
   post.recommend_point = "複数のブースがあるので色々な遊び方ができます。"
   post.advice = "場所によっては汚れる可能性もあるのでタオルなど持参した方が安心です。"
