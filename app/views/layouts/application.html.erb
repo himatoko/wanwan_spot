@@ -5,52 +5,57 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://kit.fontawesome.com/bccb8d96ef.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header>
-      <% if user_signed_in? %>
-        <h3>
-          <%= link_to "わんわんスポット", root_path %>
-        </h3>
-        <li>
-          <%= link_to "わんわんスポットとは", about_path %>
-        </li>
-        <li>
-          <%= link_to "投稿一覧", posts_path %>
-        </li>
-        <li>
-          <%= link_to "マイページ", user_path(current_user.id) %>
-        </li>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        <li>
-          <%= link_to "投稿", new_post_path %>
-        </li>
-      <% else %>
-        <h3>
-          <%= link_to "わんわんスポット", root_path %>
-        </h3>
-        <li>
-          <%= link_to "わんわんスポットとは", about_path %>
-        </li>
-        <li>
-          <%= link_to "投稿一覧", posts_path %>
-        </li>
-        <li>
-          <%= link_to "新規会員登録", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
-        <li>
-          <%= link_to "投稿", new_user_session_path %>
-        </li>
-      <% end %>
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand p-3" href="/"><%= link_to "わんわんスポット", root_path %></a>
+          
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "わんわんスポットとは", about_path, class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                <%= link_to "投稿一覧", posts_path, class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                <%= link_to "マイページ", user_path(current_user.id), class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                <%= link_to "投稿", new_post_path, class: "nav-link text-dark" %>
+              </li> 
+              <% else %>
+              <li class="nav-item">
+                  <%= link_to "わんわんスポットとは", about_path, class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                  <%= link_to "投稿一覧", posts_path, class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                  <%= link_to "新規会員登録", new_user_registration_path, class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                  <%= link_to "ログイン", new_user_session_path, class: "nav-link text-dark" %>
+              </li> 
+              <li class="nav-item">
+                  <%= link_to "投稿", new_user_session_path, class: "nav-link text-dark" %>
+              </li> 
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     
     <main>
@@ -62,5 +67,9 @@
       </div>
       <%= yield %>
     </main>
+    
+    <footer>
+      
+    </footer>
   </body>
 </html>
