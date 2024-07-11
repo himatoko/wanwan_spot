@@ -6,12 +6,26 @@
 <p>こだわり検索</p>
 
 <% @posts.each do |post| %>
-  <div>
+  <div class="card w-50  mx-auto mt-4 shadow-lg">
     <%= link_to post_path(post.id) do %>
-      <%= image_tag post.get_image %>
+      <%= image_tag post.get_image, class: "card-img-top"; %>
     <% end %>
-    <p>施設名：<%= post.shop_name %></p>
-    <p>都道府県：<%= post.prefecture %></p>
-    <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>    
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <p class="card-title">
+            <%= link_to post_path(post.id), class: "text-dark" do %>
+              <strong><i class="far fa-flag"></i><span> <%= post.title %></span></strong>
+            <% end %>
+          </p>
+          <p class="card-text">
+            <%= post.shop_name %><br>
+            <%= post.prefecture %>
+          </p>
+          <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
+          <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>    
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
