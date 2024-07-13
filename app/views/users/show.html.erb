@@ -1,24 +1,37 @@
-<% if @user == current_user %>
-  <h1>マイページ</h1>
-<% end %>
-
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image %>
-  <% if @user == current_user %>
-    <p><%= link_to "登録内容変更", edit_user_path(@user) %></p>
-    <p><%= link_to "お気に入り一覧", edit_user_path(@user) %></p>
-    <p><%= link_to "退会する", user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" %></p>
-  <% end %>
-</div>
-
-<% @posts.each do |post| %>
-  <div>
-    <%= link_to post_path(post.id) do %>
-      <%= image_tag post.get_image %>
-    <% end %>
-    <p>施設名：<%= post.shop_name %></p>
-    <p>都道府県：<%= post.prefecture %></p>
-    <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>    
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-center my-4">
+      <% if @user == current_user %>
+        <h1>マイページ</h1>
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <div class="row row-cols-2 justify-content-center py-5">
+    <div class="col-3 d-inline-flex m-4">
+      <h3><%= @user.name %></h3>
+      <%= image_tag @user.get_profile_image, class: "rounded-circle" %>
+      <% if @user == current_user %>
+    </div>
+    <div class="col-3 m-4">
+        <p><%= link_to "登録内容変更", edit_user_path(@user) %></p>
+        <p><%= link_to "お気に入り一覧", edit_user_path(@user) %></p>
+        <p><%= link_to "退会する", user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" %></p>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <% @posts.each do |post| %>
+        <div>
+          <%= link_to post_path(post.id) do %>
+            <%= image_tag post.get_image %>
+          <% end %>
+          <p>施設名：<%= post.shop_name %></p>
+          <p>都道府県：<%= post.prefecture %></p>
+          <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>    
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
