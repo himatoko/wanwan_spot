@@ -6,20 +6,15 @@
   </div>
 </div>
 
-<p>フリーワードで探す</p>
-<p>施設から探す</p>
-<p>都道府県から探す（複数選択可）</p>
-<p>こだわり検索</p>
-
 <div class="main row justify-content-center">
   <% @posts.each do |post| %>
-    <div class="row row-cols-3 p-3">
+    <div class="col-4 p-3">
       <div class="col p-3">
         <div class="content">
           <%= link_to post_path(post.id) do %>
             <%= image_tag post.get_image, class: "img-fluid" %>
           <% end %>
-          
+
           <%= link_to post_path(post.id), class: "text-dark" do %>
             <strong><i class="far fa-flag"></i><span> <%= post.title %></span></strong>
           <% end %>
@@ -28,7 +23,7 @@
             <%= post.prefecture %>
           </p>
           <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
-          <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>    
+          <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>
         </div>
       </div>
     </div>
