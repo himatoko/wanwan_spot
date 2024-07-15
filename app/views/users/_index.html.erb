@@ -1,0 +1,5 @@
+<% @records.each do |user| %>
+  <%= image_tag user.get_profile_image(100,100) %>
+  <%= user.name %>
+  <%= link_to "Show", user %>
+<% end %>
