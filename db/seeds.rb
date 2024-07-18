@@ -53,3 +53,8 @@ Post.find_or_create_by!(title: "一日遊べるドッグラン！！") do |post|
   post.address = "横浜市ーーーーー"
   post.user = lucas
 end
+
+Admin.create!(
+   email: 'admin@example.com',
+   password: 'adminhoge',
+)
