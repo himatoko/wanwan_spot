@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   }
   
   namespace :admin do
-    get 'dashbords', to: 'dashboards#index'
-    resources :users, only: [:destroy]
+    get 'dashbords', to: 'dashbords#index'
+    resources :users, only: [:show, :destroy]
   end
   
   scope module: :public do
