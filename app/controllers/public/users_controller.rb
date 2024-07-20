@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :is_matching_login_user, only: [:edit, :update]
+  before_action :ensure_guest_user, only: [:edit]
   
   def index
     @users = User.all
@@ -43,6 +44,12 @@ private
       redirect_to user_path(user.id)
     elsif user.id != current_user.id
       redirect_to user_path(user.id)
+    end
+  end
+  
+  def ensure_guest_user
+    if current_user.guest_user?
+     redirect_to user_path(current_user), notice: "ゲストユーザーはプロフィール編集できません。"
     end
   end
 end
