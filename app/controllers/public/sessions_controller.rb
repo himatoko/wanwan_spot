@@ -33,5 +33,4 @@ class Public::SessionsController < Devise::SessionsController
     about_path
   end
   
-
 end

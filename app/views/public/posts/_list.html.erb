@@ -1,0 +1,23 @@
+<div class="main row justify-content-center">
+  <% posts.each do |post| %>
+    <div class="col-4 p-3">
+      <div class="col p-3">
+        <div class="content">
+          <%= link_to post_path(post.id) do %>
+            <%= image_tag post.get_image, class: "img-fluid" %>
+          <% end %>
+
+          <%= link_to post_path(post.id), class: "text-dark" do %>
+            <strong><i class="far fa-flag"></i><span> <%= post.title %></span></strong>
+          <% end %>
+          <p class="card-text">
+            <%= post.shop_name %><br>
+            <%= post.prefecture %>
+          </p>
+          <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
+          <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
