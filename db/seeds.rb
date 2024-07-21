@@ -30,7 +30,8 @@ Post.find_or_create_by!(title: "大人気のカフェです。") do |post|
   post.recommend_point = "インスタ映えする飲み物とスイーツが楽しめます。犬向けのご飯もあります。"
   post.advice = "行列ができるので朝一に行くのがおすすめです。"
   post.prefecture = "東京都"
-  post.address = "渋谷区神宮前ーーーーー"
+  post.address = "渋谷区神宮前"
+  post.block = "2-5-○"
   post.user = olivia
 end
 
@@ -40,7 +41,8 @@ Post.find_or_create_by!(title: "素敵すぎるホテル。。！") do |post|
   post.recommend_point = "犬と一緒に泊まれるホテルです。犬用のアメニティーも充実してます！"
   post.advice = "予約が埋まりやすいので早めに予約するのがおすすめです。"
   post.prefecture = "長野県"
-  post.address = "軽井沢市ーーーーー"
+  post.address = "軽井沢市"
+  post.block = "1-4-○"
   post.user = james
  end
 
@@ -50,7 +52,8 @@ Post.find_or_create_by!(title: "一日遊べるドッグラン！！") do |post|
   post.recommend_point = "複数のブースがあるので色々な遊び方ができます。"
   post.advice = "場所によっては汚れる可能性もあるのでタオルなど持参した方が安心です。"
   post.prefecture = "神奈川県"
-  post.address = "横浜市ーーーーー"
+  post.address = "横浜市"
+  post.block = "5-2-○"
   post.user = lucas
 end
 
