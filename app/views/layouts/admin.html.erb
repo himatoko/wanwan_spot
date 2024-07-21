@@ -9,19 +9,24 @@
   </head>
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      <nav class="navbar-expand-lg navbar-light">
-        <div class="">
-          <%= link_to "わんわんスポット", root_path, class: "nav-link text-dark" %>
-        </div>
-        <div class="container p-2 text-right">
-          <% if admin_signed_in? %>
-            <%= link_to 'ログアウト', destroy_admin_session_path, class: "nav-link text-dark", method: :delete %>
-          <% end %>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <%= link_to "わんわんスポット管理者", admin_dashbords_path, class: "nav-link text-dark" %>
+          <ul class="navbar-nav ml-auto">
+            <% if admin_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'ログアウト', destroy_admin_session_path, class: "nav-link text-dark", method: :delete %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </header>
-  <main>
-    <%= yield %>
-  </main>
-</body>
+    <main>
+      <div>
+        <%= flash[:notice] %>
+      </div>
+      <%= yield %>
+    </main>
+  </body>
 </html>
