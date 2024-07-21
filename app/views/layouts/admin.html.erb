@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Admin - wanwan_spot</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
-  <% if admin_signed_in? %>
-    <div class="text-right">
-      <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
-    </div>
-  <% end %>
-  <%= yield %>
+  <head>
+    <title>Admin - wanwan_spot</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <nav class="navbar-expand-lg navbar-light">
+        <div class="container p-2 text-right">
+          <% if admin_signed_in? %>
+            <%= link_to 'ログアウト', destroy_admin_session_path, class: "nav-link text-dark", method: :delete %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+  <main>
+    <%= yield %>
+  </main>
 </body>
 </html>
