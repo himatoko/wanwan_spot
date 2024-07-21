@@ -7,22 +7,17 @@
     </div>
   </div>
   <div class="row row-cols-2 justify-content-center py-5">
-    <% if current_user.guest_user? %>
-      <div class="col-3 d-inline-flex m-4">
-        <h3><%= @user.name %></h3>
-        <%= image_tag @user.get_profile_image(250,250), class: "rounded-circle" %>
-      </div>
-    <% else %>
-      <div class="col-3 d-inline-flex m-4">
-        <h3><%= @user.name %></h3>
+    <div class="col-3 d-inline-flex m-4">
+      <h3><%= @user.name %></h3>
       <%= image_tag @user.get_profile_image(250,250), class: "rounded-circle" %>
-      </div>
+    </div>
+    <% if @user.email != "guest@example.com" %>
       <div class="col-3 m-4">
         <p><%= link_to "登録内容変更", edit_user_path(@user) %></p>
         <p><%= link_to "お気に入り一覧", edit_user_path(@user) %></p>
         <p><%= link_to "退会する", user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" %></p>
+      </div>
     <% end %>
-    </div>
   </div>
   
   <div class="row">

@@ -48,7 +48,8 @@ private
   end
   
   def ensure_guest_user
-    if current_user.guest_user?
+    @user = User.find(params[:id])
+    if @user.email == "guest@example.com"
      redirect_to user_path(current_user), notice: "ゲストユーザーはプロフィール編集できません。"
     end
   end
