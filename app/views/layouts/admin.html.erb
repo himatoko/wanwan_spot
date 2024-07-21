@@ -10,6 +10,9 @@
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
       <nav class="navbar-expand-lg navbar-light">
+        <div class="">
+          <%= link_to "わんわんスポット", root_path, class: "nav-link text-dark" %>
+        </div>
         <div class="container p-2 text-right">
           <% if admin_signed_in? %>
             <%= link_to 'ログアウト', destroy_admin_session_path, class: "nav-link text-dark", method: :delete %>
