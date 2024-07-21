@@ -14,15 +14,12 @@
       <div class="col-12">
         <p class="post-title"><%= @post.created_at.strftime('%Y/%m/%d') %></p>
         <p><%= @post.title %></p>
-
-      
-      
     </div>
     
     <div class="row justify-content-center">
       <div class="col-10">
         <p>【施設名】<%= @post.shop_name %></p>
-        <p>【住所】<%= @post.prefecture %><%= @post.address %></p>
+        <p>【住所】<%= @post.prefecture %><%= @post.address %><%= @post.block %></p>
         <p>【おすすめポイント】<%= @post.recommend_point %></p>
         <p>【行く方へのアドバイス】<%= @post.advice %></p>
         <% if @post.user == current_user %>

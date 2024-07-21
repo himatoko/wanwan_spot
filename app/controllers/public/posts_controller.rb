@@ -49,7 +49,7 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
 private
   
   def post_params
-    params.require(:post).permit(:image, :title, :shop_name, :recommend_point, :advice, :prefecture, :address)
+    params.require(:post).permit(:image, :title, :shop_name, :recommend_point, :advice, :prefecture, :address, :block)
   end
   
   def is_matching_login_user

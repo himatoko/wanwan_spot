@@ -31,6 +31,10 @@
           <div class="input-group mb-3 mt-2">
             <%= f.text_field :address, class: "form-control", autofocus: true, id:"inputAddress",placeholder: "市区町村" %>
           </div>
+          <label for="inputBlock">番地</label>
+          <div class="input-group mb-3 mt-2">
+            <%= f.text_field :block, class: "form-control", autofocus: true, id:"inputAddress",placeholder: "番地" %>
+          </div>
           <label for="inputRecommendpoint">おすすめポイント</label>
           <div class="input-group mb-3 mt-2">
             <%= f.text_area :recommend_point, class: "form-control", autofocus: true, id:"inputRecommendpoint", placeholder:"おすすめポイント"%>
