@@ -7,6 +7,9 @@
     </div>
     <div class="col-10">
       <%= @post.user.name %>
+      フォロー<%= @post.user.followers.count %>
+      フォロワー<%= @post.user.followeds.count %>
+      <%= render "public/relationships/follow_btn", user: @post.user %>
     </div>
     <div>
       <%= image_tag @post.get_image %>
