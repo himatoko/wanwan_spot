@@ -15,7 +15,9 @@
             <%= post.prefecture %>
           </p>
           <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
-          <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>
+          <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %>
+          <%= render'public/favorites/favorite', post: post %>
+          </p>
         </div>
       </div>
     </div>

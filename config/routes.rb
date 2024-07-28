@@ -14,8 +14,13 @@ Rails.application.routes.draw do
     get 'homes/about', to: "homes#about", as: :about
     resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
       resources :comments, only: [:create, :destroy]
+      resource :favorite, only: [:create, :destroy]
     end
-    resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :users, only: [:index, :show, :edit, :update, :destroy] do
+      member do
+        get :favorites
+      end
+    end
     get "/search", to: "searches#search"
     devise_scope :user do
       post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'

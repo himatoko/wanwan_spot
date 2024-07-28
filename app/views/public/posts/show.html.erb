@@ -46,6 +46,7 @@
           <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
           <%= f.submit "送信する" %>
         <% end %>
+        <%= render'public/favorites/favorite', post: @post %>
       </div>
     </div>
   </div>

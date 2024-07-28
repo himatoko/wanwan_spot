@@ -14,7 +14,6 @@
     <% if @user.email != "guest@example.com" && @user == current_user %>
       <div class="col-3 m-4">
         <p><%= link_to "登録内容変更", edit_user_path(@user) %></p>
-        <p><%= link_to "お気に入り一覧", edit_user_path(@user) %></p>
         <p><%= link_to "退会する", user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" %></p>
       </div>
     <% end %>
