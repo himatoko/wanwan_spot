@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row pt-3">
+    <div class="col text-center mt-4">
+      <h2>フォロー中</h2>
+    </div>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= link_to user_path(user) do %>
+                <div class="d-flex align-items-center justify-content-center">
+                  <%= image_tag user.get_profile_image(50,50) %>
+                </div>
+              <% end %>
+            </td>
+            <td>
+              <div class="d-flex align-items-center justify-content-center"><%= user.name %></div>
+            </td>
+            <td>
+              <%= link_to follows_user_path(user) do %>
+                <h6 class="d-flex align-items-center justify-content-center">フォロー<%= user.followers.count %></h6>
+              <% end %>
+            </td>
+            <td>  
+              <%= link_to followers_user_path(user) do %>
+                <h6 class="d-flex align-items-center justify-content-center">フォロワー<%= user.followeds.count %></h6>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

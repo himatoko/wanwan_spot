@@ -10,6 +10,8 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @following_users = @user.following_users
+    @follower_users = @user.follower_users
   end
 
   def edit
@@ -36,6 +38,16 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
     @favorite_posts = Post.find(favorites)
+  end
+  
+  def follows
+    user = User.find(params[:id])
+    @users = user.following_users
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @user = user.follower_users
   end
   
 private

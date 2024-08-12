@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="row pt-3">
-    <div class="col text-center my-4">
+    <div class="col my-4">
       <% if @model == 'user' %>
-        <h2>ユーザー検索結果 "<%= @content %>"</h2>
+        <h2 class="text-center">ユーザー検索結果 "<%= @content %>"</h2>
         <%= render 'public/users/search_index', users: @records %>
       <% elsif @model == 'post' %>
-        <h2>投稿検索結果 "<%= @content %>"</h2>
+        <h2 class="text-center">投稿検索結果 "<%= @content %>"</h2>
         <%= render 'public/posts/list', posts: @records %>
       <% end %>
     </div>
