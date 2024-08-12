@@ -32,13 +32,10 @@
                 </li>
               <% elsif user_signed_in? %>
                 <li class="nav-item">
-                  <%= link_to "ABOUT", about_path, class: "nav-link text-dark" %>
+                  <%= link_to "タイムライン", feed_path, class: "nav-link text-dark" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "投稿一覧", posts_path, class: "nav-link text-dark" %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "ユーザー一覧", users_path, class: "nav-link text-dark" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "マイページ", user_path(current_user.id), class: "nav-link text-dark" %>
@@ -53,9 +50,6 @@
                   <%= link_to "投稿", new_post_path, class: "nav-link text-dark" %>
                 </li>
               <% else %>
-                <li class="nav-item">
-                    <%= link_to "ABOUT", about_path, class: "nav-link text-dark" %>
-                </li>
                 <li class="nav-item">
                     <%= link_to "投稿一覧", posts_path, class: "nav-link text-dark" %>
                 </li>

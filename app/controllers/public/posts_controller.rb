@@ -46,6 +46,11 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
     redirect_to user_path(current_user.id)
   end
   
+  def feed
+    follow_users = Relationship.where(follower_id: current_user.id)
+    @posts = Post.where(user_id: follow_users.pluck(:followed_id)).order(:desc).all
+  end
+  
 private
   
   def post_params

@@ -13,12 +13,11 @@ Rails.application.routes.draw do
   scope module: :public do
     devise_for :users
     root to: "homes#top"
-    get 'homes/about', to: "homes#about", as: :about
-    resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
+    resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy, :feed] do
       resources :comments, only: [:create, :destroy]
       resource :favorite, only: [:create, :destroy]
     end
-    
+    get '/feed', to: 'posts#feed'
     resources :users, only: [:index, :show, :edit, :update, :destroy] do
       member do
         get :favorites
