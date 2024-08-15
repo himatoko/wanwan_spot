@@ -1,9 +1,8 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row py-3">
     <div class="col text-center mt-4">
       <h2>いいねした投稿一覧</h2>
     </div>
   </div>
+  <%= render 'public/posts/list', posts: @favorite_posts %>
 </div>
-
-<%= render 'public/posts/list', posts: @favorite_posts %>
