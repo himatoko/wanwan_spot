@@ -1,9 +1,8 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row py-3">
     <div class="col text-center mt-4">
       <h2>タイムライン</h2>
     </div>
   </div>
+  <%= render 'list', posts: @posts %>
 </div>
-
-<%= render 'list', posts: @posts %>

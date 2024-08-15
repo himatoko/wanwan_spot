@@ -1,10 +1,10 @@
-<div class="main row justify-content-center">
+<div class="main row">
   <% posts.each do |post| %>
-    <div class="col-4 p-3">
-      <div class="col p-3">
+    <div class="col-lg-4">
+      <div class="col py-3">
         <div class="content">
           <%= link_to post_path(post.id) do %>
-            <%= image_tag post.get_image, class: "img-fluid" %>
+            <%= image_tag post.get_image, class: "img-fluid d-flex", style: "width: 100%; aspect-ratio: 1;" %>
           <% end %>
 
           <%= link_to post_path(post.id), class: "text-dark" do %>
@@ -13,10 +13,9 @@
           <p class="card-text">
             <%= post.shop_name %><br>
             <%= post.prefecture %>
-          </p>
-          <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
-          <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %>
-          <%= render'public/favorites/favorite', post: post %>
+            <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
+            <span><%= link_to "#{post.comments.count} コメント", post_path(post.id) %><br>
+            <%= render'public/favorites/favorite', post: post %>
           </p>
         </div>
       </div>
