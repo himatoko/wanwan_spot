@@ -43,12 +43,12 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
     post = Post.find(params[:id])
     post.destroy
     flash[:notice] = '投稿を削除しました。'
-    redirect_to user_path(current_user.id)
+    redirect_to mypage_path
   end
   
   def feed
     follow_users = Relationship.where(follower_id: current_user.id)
-    @posts = Post.where(user_id: follow_users.pluck(:followed_id)).order(:desc).all
+    @posts = Post.where(user_id: follow_users.pluck(:followed_id)).order(created_at:"DESC").all
   end
   
 private

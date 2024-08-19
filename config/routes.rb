@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resource :favorite, only: [:create, :destroy]
     end
     get '/feed', to: 'posts#feed'
+    get '/mypage', to: 'users#mypage', as: 'mypage'
     resources :users, only: [:index, :show, :edit, :update, :destroy] do
       member do
         get :favorites

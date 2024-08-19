@@ -4,5 +4,5 @@
       <h2>いいねした投稿一覧</h2>
     </div>
   </div>
-  <%= render 'public/posts/list', posts: @favorite_posts %>
+  <%= render 'public/posts/list', posts: @favorite_posts, user: current_user %>
 </div>

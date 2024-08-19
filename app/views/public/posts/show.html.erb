@@ -28,7 +28,7 @@
             <%= link_to "編集", edit_post_path(@post), class:"btn btn-outline-secondary btn-sm" %>
             <%= link_to "削除", post_path(@post), class:"btn btn-outline-secondary btn-sm", method: :delete, data: {confirm: "本当に削除しますか？"} %>
           <% end %>
-          <%= render'public/favorites/favorite', post: @post %>
+          <%= render'public/favorites/favorite', post: @post, user: current_user %>
         </div>
       </div>
       <p><%= @post.title %></p>
