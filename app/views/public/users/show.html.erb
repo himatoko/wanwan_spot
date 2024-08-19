@@ -16,7 +16,7 @@
         <div class="text-center mb-3">
           <%= link_to follows_user_path(@user), class:"text-dark" do %>
             <%= @user.followers.count %><br>フォロー中
-          <% end %> 
+          <% end %>
         </div>
         <div class="text-center mb-3">
           <%= link_to followers_user_path(@user), class:"text-dark" do %>
@@ -27,14 +27,14 @@
         <div><%= link_to "退会する", user_path(current_user.id), method: :delete, class:"btn btn-outline-secondary mb-3", "data-confirm" => "本当に退会しますか？" %></div>
       </div>
     <% end %>
-    
+
 
     <% if current_user != @user %>
       <div class="col-lg-2 d-flex align-items-center justify-content-center flex-column mx-4 mt-4">
         <div class="text-center mb-3">
           <%= link_to follows_user_path(@user), class:"text-dark" do %>
             <%= @user.followers.count %><br>フォロー中
-          <% end %> 
+          <% end %>
         </div>
         <div class="text-center mb-3">
           <%= link_to followers_user_path(@user), class:"text-dark" do %>
@@ -49,5 +49,5 @@
       </div>
     <% end %>
   </div>
-  <%= render 'public/posts/list', posts: @posts %>
-  
+  <%= render 'public/posts/list', posts: @posts, user: @user %>
+

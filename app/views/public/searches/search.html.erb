@@ -12,6 +12,6 @@
         <h2>投稿検索結果 "<%= @content %>"</h2>
       </div>
     </div>
-    <%= render 'public/posts/list', posts: @records %>
+    <%= render 'public/posts/list', posts: @records, user: current_user %>
   <% end %>
 </div>
