@@ -1,0 +1,24 @@
+<div class="main row">
+  <% posts.each do |post| %>
+    <div class="col-lg-4">
+      <div class="col py-3">
+        <div class="content">
+          <%= link_to admin_post_path(post.id) do %>
+            <%= image_tag post.get_image, class: "img-fluid d-flex", style: "width: 100%; aspect-ratio: 1;" %>
+          <% end %>
+
+          <%= link_to admin_post_path(post.id), class: "text-dark" do %>
+            <strong><i class="far fa-regular fa-font-awesome"></i><span> <%= post.title %></span></strong>
+          <% end %>
+          <p class="card-text">
+            <%= post.shop_name %><br>
+            <%= post.prefecture %>
+            <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
+            <span><%= post.comments.count %> コメント<br>
+            ♡<%= post.favorites.count %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

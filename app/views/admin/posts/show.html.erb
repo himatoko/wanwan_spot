@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row no-gutters justify-content-center">
+
+    <div class="col-lg-8 d-flex justify-content-around align-items-center p-2">
+      <div class="p-2 text-center">
+        <%= link_to admin_user_path(@post.user.id) do %>
+          <%= image_tag @post.user.get_profile_image(100,100), style: "border-radius: 50%; width: 100px; height: 100px; object-fit:cover;" %>
+        <% end %>
+        <%= @post.user.name %>
+      </div>
+      <div class="p-2">
+        フォロー<%= @post.user.followers.count %>
+        フォロワー<%= @post.user.followeds.count %>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <%= image_tag @post.get_image, style: "width: 100%; aspect-ratio: 1;" %>
+      <div class="d-flex my-3">
+        <div class="flex-grow-1">
+          <%= @post.created_at.strftime('%Y/%m/%d') %>
+        </div>
+        <div>
+          <% if @post.user == current_user %>
+            <%= link_to "編集", edit_post_path(@post), class:"btn btn-outline-secondary btn-sm" %>
+            <%= link_to "削除", post_path(@post), class:"btn btn-outline-secondary btn-sm", method: :delete, data: {confirm: "本当に削除しますか？"} %>
+          <% end %>
+          ♡<%= @post.favorites.count %>
+        </div>
+      </div>
+      <p><%= @post.title %></p>
+      <p>【施設名】<%= @post.shop_name %></p>
+      <p>【住所】<%= @post.prefecture %><%= @post.address %><%= @post.block %></p>
+      <p>【おすすめポイント】<%= @post.recommend_point %></p>
+      <p>【行く方へのアドバイス】<%= @post.advice %></p>
+      <p>コメント件数：<%= @post.comments.count %></p>
+      <% @post.comments.each do |comment| %>
+        <div class="d-flex align-items-center my-3">
+          <div class="p-2">
+            <%= image_tag comment.user.get_profile_image(50,50), style: "border-radius: 50%; width: 50px; height: 50px; object-fit:cover;" %>
+          </div>
+          <div class="flex-grow-1">
+            <%= comment.user.name %>
+            <%= comment.created_at.strftime('%Y/%m/%d') %><br><%= comment.comment %>
+            <% if comment.user == current_user %>
+              <%= link_to "削除", post_comment_path(comment.post, comment), method: :delete, class:"btn btn-outline-secondary btn-sm" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

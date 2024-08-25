@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get 'dashbords', to: 'dashbords#index'
-    resources :users, only: [:show, :destroy]
+    resources :users, only: [:show, :destroy] do
+      member do
+        get :follows, :followers
+      end
+    end
+    resources :posts, only: [:show] 
   end
   
   scope module: :public do
