@@ -10,7 +10,8 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-     redirect_to post_path(@post.id)
+      flash[:notice] = '投稿に成功しました。'
+      redirect_to post_path(@post.id)
     else
       render :new
     end
