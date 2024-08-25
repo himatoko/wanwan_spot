@@ -6,12 +6,12 @@
     </div>
     <div class="col-lg-2 d-flex align-items-center justify-content-center flex-column mx-4 mt-4">
       <div class="text-center mb-3">
-        <%= link_to follows_user_path(@user), class:"text-dark" do %>
+        <%= link_to follows_admin_user_path(@user), class:"text-dark" do %>
           <%= @user.followers.count %><br>フォロー中
         <% end %> 
       </div>
       <div class="text-center mb-3">
-        <%= link_to followers_user_path(@user), class:"text-dark" do %>
+        <%= link_to followers_admin_user_path(@user), class:"text-dark" do %>
           <%= @user.followeds.count %><br>フォロワー
         <% end %>
       </div>
@@ -19,5 +19,5 @@
     </div>
   </div>
 
-  <%= render 'public/posts/list', posts: @posts, user: current_admin %>
+  <%= render 'admin/posts/list', posts: @posts, user: current_admin %>
 </div>

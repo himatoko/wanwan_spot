@@ -10,4 +10,14 @@ class Admin::UsersController < ApplicationController
     @user.destroy
     redirect_to admin_dashbords_path, notice: 'ユーザーを削除しました'
   end
+  
+  def follows
+    user = User.find(params[:id])
+    @users = user.following_users
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @user = user.follower_users
+  end
 end
