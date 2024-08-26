@@ -19,7 +19,8 @@
 ・自分が行った施設を投稿する時
 ​
 ## 設計書
-後ほど設計予定
+
+https://drive.google.com/drive/u/1/folders/1gxSF0ID0Enf_f46Xq32kkv2CocFt6hs-
 ​
 ## 開発環境
 - OS：Linux(CentOS)
@@ -27,6 +28,11 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+##使用素材
+・フリーイラスト素材として以下を使用
+　　⚪︎いらすとや(https://www.irasutoya.com/)
+　　
 
 ## 実装機能リストのURL
 
