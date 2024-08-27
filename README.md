@@ -10,18 +10,18 @@
 また共通の「犬」を通して、利用者同士がオンラインで交流できると考え、このテーマにしました。
 ​
 ### ターゲットユーザ
-・犬と一緒に出かけられる場所を探している人
-・犬という共通点を持った友人・コミュニティを見つけたい人
+- 犬と一緒に出かけられる場所を探している人
+- 犬という共通点を持った友人・コミュニティを見つけたい人
 
 ### 主な利用シーン
-・犬と一緒に楽しめる施設を検索する時
-・実際に行った人の感想を知りたい時
-・自分が行った施設を投稿する時
+- 犬と一緒に楽しめる施設を検索する時
+- 実際に行った人の感想を知りたい時
+- 自分が行った施設を投稿する時
 ​
 ## 設計書
 
-https://drive.google.com/drive/u/1/folders/1gxSF0ID0Enf_f46Xq32kkv2CocFt6hs-
-​
+https://drive.google.com/drive/folders/1gxSF0ID0Enf_f46Xq32kkv2CocFt6hs-?usp=drive_link
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
@@ -30,7 +30,8 @@ https://drive.google.com/drive/u/1/folders/1gxSF0ID0Enf_f46Xq32kkv2CocFt6hs-
 - IDE：Cloud9
 
 ## 使用素材
-・フリーイラスト素材として以下を使用
+- フリーイラスト素材として以下を使用
+
 　　⚪︎いらすとや(https://www.irasutoya.com/)
 
 
