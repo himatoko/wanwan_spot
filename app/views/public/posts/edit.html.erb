@@ -15,6 +15,7 @@
         <% end %>
 
         <%= form_with model: @post do |f| %>
+          <%= f.file_field :image, accept: "image/*", class: "w-100 mb-3" %>
           <label for="inputTitle">投稿タイトル</label>
           <div class="input-group mb-3 mt-2">
             <%= f.text_field :title, class: "form-control", autofocus: true, id:"inputTitle", placeholder:"投稿タイトル"%>
