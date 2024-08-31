@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   validates :shop_name, presence: true
   validates :prefecture, presence: true
   validates :address, presence: true
+  validates :block, presence: true
   validates :recommend_point, presence: true
   validates :advice, presence: true
 

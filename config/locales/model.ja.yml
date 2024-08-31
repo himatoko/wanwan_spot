@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models: 
+      post: 投稿
+    attributes:
+      user:
+        name: 名前
+      post:
+        title: 投稿タイトル
+        shop_name: 施設名
+        prefecture: 都道府県
+        address: 市区町村
+        block: 番地
+        recommend_point: おすすめポイント
+        advice: 行く方へのアドバイス

@@ -15,25 +15,25 @@
         <% end %>
         <%= form_with model: @post do |f| %>
           <%= f.file_field :image, accept: "image/*", class: "w-100" %>
-          <div class="input-group mb-3 mt-4">
+          <div class="mb-3 mt-4">
             <%= f.text_field :title, class: "form-control", placeholder: "投稿タイトル" %>
           </div>
-          <div class="input-group mb-3 mt-4">
+          <div class="mb-3 mt-4">
             <%= f.text_field :shop_name, class: "form-control", placeholder: "施設名" %>
           </div>
-          <div class="input-group mb-3 mt-4">
+          <div class="mb-3 mt-4">
             <%= f.text_field :prefecture, class: "form-control", rows: "3", placeholder: "都道府県" %>
           </div>
-          <div class="input-group mb-3 mt-4">
+          <div class="mb-3 mt-4">
             <%= f.text_field :address, class: "form-control", rows: "3", placeholder: "市区町村" %>
           </div>
-          <div class="input-group mb-3 mt-4">
+          <div class=" mb-3 mt-4">
             <%= f.text_field :block, class: "form-control", rows: "3", placeholder: "番地" %>
           </div>
-          <div class="input-group mb-3 mt-4">
+          <div class="mb-3 mt-4">
             <%= f.text_area :recommend_point, class: "form-control", rows: "3", placeholder: "おすすめポイント" %>
           </div>
-          <div class="input-group mb-3 mt-4">
+          <div class="mb-3 mt-4">
             <%= f.text_area :advice, class: "form-control", rows: "3", placeholder: "行く方へのアドバイス" %>
           </div>
           <%= f.submit '投稿', class: "btn btn-lg btn-block btn-info mt-4" %>
